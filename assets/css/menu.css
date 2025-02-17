@@ -1,0 +1,297 @@
+/* CSS - MENU AND STEPS EFFECT */
+
+.menu-section {
+  width: 100%;
+  height: auto;
+  background-color: #f8f4ef;
+  /* display: flex; */
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 5%;
+}
+.slogan{
+  font-size: 2rem;
+  margin-bottom: 0px;
+  font-family: Rubik;
+}
+
+.section-header {
+  font-size: 4vh;
+}
+
+.barra hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  width: 90%;
+  margin: 20px auto;
+}
+
+.tarjetas-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Contenedor general de la tarjeta */
+.tarjeta {
+  width: 325px;
+  height: 455px; 
+  perspective: 1000px;
+  position: relative;
+  animation-fill-mode: forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: Rubik;
+  
+}
+
+.animate__animated.animate__fadeInUp {
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+}
+
+.tarjeta:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: -3px 1px 41px 1px rgba(0,0,0,0.75);
+-moz-box-shadow: -3px 1px 41px 1px rgba(0,0,0,0.75);
+box-shadow: -3px 1px 41px 1px rgba(0,0,0,0.75);
+}
+
+
+@keyframes fadeInUpCustom {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tarjeta.animate__fadeInUp {
+  animation: fadeInUpCustom 1s ease-out;
+}
+
+@keyframes fadeInTopLeftCustom {
+  0% {
+    opacity: 0;
+    transform: translate(-50px, -50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+.tarjeta.animate__fadeInTopLeft {
+  animation: fadeInTopLeftCustom 1s ease-out;
+}
+
+@keyframes fadeInTopRightCustom {
+  0% {
+    opacity: 0;
+    transform: translate(50px, -50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+.tarjeta.animate__fadeInTopRight {
+  animation: fadeInTopRightCustom 1s ease-out;
+}
+
+#tarjeta1,
+#tarjeta2,
+#tarjeta3 {
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.detras {
+  width: 325px; /* Aumento proporcional de 250px a 325px */
+  height: 455px; /* Aumento proporcional de 350px a 455px */
+  position: absolute;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  text-align: left;
+  background-color: var(--accent-dark);
+  color: white;
+  border-radius: 10px;
+  padding: 25px;
+
+  
+}
+
+.hidden{
+  display: none !important;
+}
+
+.tarjeta.flipped .frente {
+  transform: rotateY(180deg);
+}
+
+.tarjeta.flipped .detras {
+  transform: rotateY(0deg);
+}
+
+.detras h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.detras ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.detras ul li {
+  margin: 5px 0;
+}
+
+.detras ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.detras ul li a:hover {
+  color: #ffcc00;
+}
+
+#linksCarta {
+  text-decoration: none;
+  color: white;
+}
+
+#linksCarta:hover {
+  color: #bcb2a8
+}
+
+@media (max-width: 1024px) {
+  .menu-section {
+    width: 90%;
+  }
+
+  .tarjetas-container {
+    flex-direction: column; /* Cambiar de fila a columna */
+    align-items: center; /* Centrar las tarjetas */
+    gap: 15px;
+  }
+
+  .tarjeta {
+    width: 200px;
+    height: 300px;
+  }
+  .detras {
+    width: 200px;
+    height: 300px;
+    padding: 20px;
+    overflow: scroll;
+  }
+
+  .section-header {
+    font-size: 6vw; /* Ajustar tamaño de fuente para móviles */
+  }
+}
+
+.caminar-container {
+  position: relative;
+  width: 100%;
+  height: 70px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.caminar {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  animation: caminar 4s linear infinite;
+}
+
+.huella {
+  width: 50px;
+  margin: 0 10px;
+  opacity: 0;
+  animation: huella-aparece 15s forwards infinite;
+  transform: rotate(90deg);
+}
+
+/* Efecto de las huellas para cada una */
+.huella:nth-child(1) {
+  animation-delay: 0s;
+  transform: rotate(360deg);
+}
+
+.huella:nth-child(2) {
+  animation-delay: 1s;
+  transform: rotate(360deg);
+}
+
+.huella:nth-child(3) {
+  animation-delay: 2s;
+  transform: rotate(360deg);
+}
+
+.huella:nth-child(4) {
+  animation-delay: 3s;
+  transform: rotate(360deg);
+}
+
+.huella:nth-child(5) {
+  animation-delay: 4s;
+  transform: rotate(360deg);
+}
+
+.huella:nth-child(6) {
+  animation-delay: 5s;
+  transform: rotate(360deg);
+}
+
+.huella:nth-child(7) {
+  animation-delay: 6s;
+  transform: rotate(360deg);
+}
+
+.huella:nth-child(8) {
+  animation-delay: 7s;
+  transform: rotate(360deg);
+}
+
+.huella:nth-child(9) {
+  animation-delay: 8s;
+  transform: rotate(360deg);
+}
+
+.huella:nth-child(10) {
+  animation-delay: 9s;
+  transform: rotate(360deg);
+}
+
+.huella:nth-child(11) {
+  animation-delay: 10s;
+  transform: rotate(360deg);
+}
+
+/* Animación de la huella apareciendo y desapareciendo */
+@keyframes huella-aparece {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

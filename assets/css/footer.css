@@ -1,0 +1,85 @@
+/* CSS - FOOTER */
+
+.footer { 
+    font-size: 1rem;
+    background-color: var(--background-dark);
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+    font-family: "Rubik", sans-serif;
+}
+
+#footer-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: var(--text-light);
+}
+
+#footer-container a {
+    text-decoration: none;
+    color: var(--text-light);
+}
+
+#footer-container a:hover {
+    color: var(--accent-dark);
+    text-decoration: underline;
+}
+
+.footer-section {
+    margin: 1rem;
+    flex: 1;
+}
+
+#footer-1 {
+    flex: 3;
+    text-align: justify;
+}
+
+.footer-separator {
+    width: 0.05rem;
+    height: 6rem;
+    background-color: var(--accent-dark);
+    margin: 0 1rem;
+}
+
+.footer-social-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.footer-social-list li {
+    margin: 0.5rem;
+}
+
+#footer-1 a {
+    text-decoration: underline;
+}
+
+#footer-1 a:hover,
+#footer-2 a:hover {
+    color: var(--accent-dark);
+}
+
+@media screen and (max-width: 1024px) {
+    #footer-container {
+        flex-direction: column;
+    }
+
+    .footer-section {
+        flex: 1 1 100%;
+        margin-bottom: 1rem;
+    }
+
+    .footer-separator {
+        display: none;
+    }
+
+    .footer {
+        font-size: 0.8rem;
+    }
+}

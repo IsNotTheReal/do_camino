@@ -1,0 +1,14 @@
+{
+  "name": "do-camino",
+  "version": "1.0.0",
+  "description": "Página web para el restaurante Do Camino",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Bienvenido\""
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "animate.css": "^4.1.1"
+  }
+}

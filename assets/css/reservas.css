@@ -1,0 +1,246 @@
+/* Colocación de los elementos dentro del apartado de reservas*/ 
+
+#reservas {
+	margin: auto;
+	display: grid;
+	place-items: center;
+	grid-template-columns: 1fr 2fr;
+	width: 80%;
+	gap: 20px;
+	font-family: Rubik;
+	font-size: 0.9rem;
+	padding-bottom: 10px;
+}
+#tablaCalendario {
+	scale: 1.3;
+}
+#calendario {
+	align-self: center;
+}
+#tablaLeyenda {
+	margin: auto;
+	margin-bottom: 5px;
+	height: auto;
+	width: 90%;
+	font-family: Rubik;
+}
+
+/* Estilos de la tabla que muestra la leyenda de las reservas*/
+
+#tablaLeyenda ul {
+	list-style-type: none;
+	padding: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	background-color: var(--background-dark);
+	margin-bottom: 5px;  
+}
+#leyendaClosed::before {
+	content: '';
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	background-color: var(--text-dark);
+	margin-right: 10px;
+	border: 1px solid;
+}
+#leyendaFull::before {
+	content: '';
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	background-color: var(--accent-light);
+	border: 1px solid;
+
+	margin-right: 10px;
+}
+#leyendaAvaliable::before {
+	content: '';
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	background-color: var(--background-light);
+	margin-right: 10px;
+	border: 1px solid;
+}
+
+/*Estilos pertinentes a la tabla del calendario de reservas*/
+
+#tablaCalendario > caption {
+	font-weight: 600;
+}
+
+#tablaCalendario th {
+	border: 1px solid black;
+	text-align: center;
+}
+
+#tablaCalendario tr > td {
+	border: 1px solid black;
+	text-align: center;
+	padding: 5px;
+}
+.dayPast {
+	color: rgb(179, 177, 177);
+	background-color: var(--background-light);
+}
+.dayToday {
+	background-color: rgb(179, 177, 177);
+}
+.dayFull {
+	background-color: var(--accent-light);
+	color:var(--background-light);
+}
+.dayClosed {
+	background-color: black;
+	color: rgb(179, 177, 177);
+}
+.dayAvaliable {
+	color: black;
+}
+.dayAvaliable:hover {
+	background-color:var(--background-dark);
+	cursor: pointer;
+}
+
+/*Estilos para el formulario de reservas*/
+
+#formulario {
+	display: grid;
+	place-items: center;
+	grid-template-columns: 1fr;
+	grid-gap: 20px;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	width: 100%;
+	max-width: 400px;
+}
+
+#numGente {
+	width: 50px;
+}
+#formulario label {
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+
+#buttonForm {
+	border: 1px solid black;
+	font-size: x-large;
+	color: #bcb2a8;
+	font-family: inherit;
+	font-weight: 800;
+	cursor: pointer;
+	position: relative;
+	border: none;
+	background: none;
+	text-transform: uppercase;
+	transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+	transition-duration: 400ms;
+	transition-property: color;
+	margin-bottom: 1vh;
+}
+
+#buttonForm:focus,
+#buttonForm:hover {
+	color: var(--accent-light);
+}
+
+#buttonForm:focus:after,
+#buttonFormhover:after {
+	width: 100%;
+	left: 0%;
+}
+
+#buttonForm:after {
+	content: '';
+	pointer-events: none;
+	bottom: -2px;
+	left: 50%;
+	position: absolute;
+	width: 0%;
+	height: 2px;
+	background-color: var(--accent-light);
+	transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+	transition-duration: 400ms;
+	transition-property: width, left;
+}
+
+/*Código tirado de  https://uiverse.io/anniekoop/nasty-impala-89*/
+.input {
+	border: 1.5px solid #000;
+	border-radius: 0.5rem;
+	box-shadow: 1.5px 2px 0 #000;
+	outline: none;
+	transition: ease 0.25s;
+	scale: 1.2;
+	padding: 2px;
+}
+
+.input:focus {
+	box-shadow: 3px 4px 0 black;
+}
+
+#formulario textarea {
+	resize: none;
+}
+#formulario {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 0 auto;
+	gap: 10px;
+	align-items: center;
+	text-align: center;
+}
+#dataHoraDiv,
+#correoNumeroDiv,
+#comentarioDiv {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+
+#formulario label {
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+.input {
+	margin-bottom: 15px;
+	scale:1.1
+}
+
+#buttonDiv {
+	display: flex;
+	justify-content: center;
+}
+
+#dataSeleccionada {
+	text-align: center;
+	scale: 1.1;
+}
+#numGente {
+	text-align: center;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+	#reservas {
+		display: flex;
+		flex-direction: column;
+		gap: 10vh;
+	}
+	#tablaLeyenda {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 5vh;
+	}
+	#calendario,
+	#formulario {
+		max-width: 100%;
+	}
+}
