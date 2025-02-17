@@ -60,11 +60,6 @@
     text-decoration: underline;
 }
 
-#footer-1 a:hover,
-#footer-2 a:hover {
-    color: var(--accent-dark);
-}
-
 @media screen and (max-width: 1024px) {
     #footer-container {
         flex-direction: column;
